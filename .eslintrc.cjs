@@ -7,7 +7,8 @@ module.exports = {
   },
   extends: [
     'standard',
-    'plugin:react/recommended'
+    'plugin:react/recommended',
+    'eslint-config-prettier'
   ],
   overrides: [
     {

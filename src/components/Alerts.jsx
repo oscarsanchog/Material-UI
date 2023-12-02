@@ -1,9 +1,19 @@
-import { Alert, AlertTitle, Button, Collapse, Typography } from '@mui/material'
+import {
+  Alert,
+  AlertTitle,
+  Button,
+  Collapse,
+  Snackbar,
+  Typography,
+} from '@mui/material'
 import { Box, Container } from '@mui/system'
 import { useState } from 'react'
 
+import AddReactionIcon from '@mui/icons-material/AddReaction'
+
 const Alerts = () => {
   const [open, setOpen] = useState(true)
+  const [openSnackbar, setOpenSnackbar] = useState(false)
 
   return (
     <>
@@ -30,7 +40,9 @@ const Alerts = () => {
             This is a warning alert — check it out!
           </Alert>
 
-          <Alert severity='info'>This is an info alert — check it out!</Alert>
+          <Alert severity='info' icon={<AddReactionIcon />} variant='outlined'>
+            This is an info alert — check it out!
+          </Alert>
 
           <Collapse in={open}>
             <Alert
@@ -42,6 +54,17 @@ const Alerts = () => {
               This is a success alert — check it out!
             </Alert>
           </Collapse>
+
+          <Button variant='contained' onClick={() => setOpenSnackbar(true)}>
+            Open
+          </Button>
+
+          <Snackbar open={openSnackbar} /* message='Alerta Snackbar' */>
+            <Alert severity='error'>
+              <AlertTitle>Error</AlertTitle>
+              This is an error alert — check it out!
+            </Alert>
+          </Snackbar>
         </Box>
       </Container>
     </>

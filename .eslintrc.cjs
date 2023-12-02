@@ -33,6 +33,7 @@ module.exports = {
   rules: {
     'no-unused-vars': 'warn',
     'no-trailing-spaces': 'off',
-    'react/react-in-jsx-scope': 'off'
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off'
   }
 }

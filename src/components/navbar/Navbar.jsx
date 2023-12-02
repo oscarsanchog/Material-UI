@@ -9,6 +9,7 @@ import {
 import NavListDrawer from './NavListDrawer'
 import { useContext, useState } from 'react'
 import { NavLinks } from '../../contexts/navLinks'
+import { NavLink } from 'react-router-dom'
 
 import MenuIcon from '@mui/icons-material/Menu'
 import { Box } from '@mui/system'
@@ -19,7 +20,7 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar position='fixed'>
+      <AppBar position='none'>
         <Toolbar>
           <IconButton
             color='inherit'
@@ -40,8 +41,8 @@ const Navbar = () => {
               <Button
                 key={title}
                 color='inherit'
-                href={path}
-                component='a'>
+                to={path}
+                component={NavLink}>
                 {title}
               </Button>
             ))}

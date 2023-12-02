@@ -9,23 +9,15 @@ import { Route, Routes } from 'react-router-dom'
 import Login from './views/Login'
 import Register from './views/Register'
 
-import MenuIcon from '@mui/icons-material/Menu'
-import InboxIcon from '@mui/icons-material/Inbox'
-import DraftsIcon from '@mui/icons-material/Drafts'
-import { createContext } from 'react'
+import { NavLinksProvider } from './contexts/navLinks'
 
-const navLinksArray = [
-  { title: `Home`, path: `#`, icon: <InboxIcon /> },
-  { title: `Login`, path: `#login`, icon: <DraftsIcon /> },
-  { title: `Register`, path: `#register`, icon: <MenuIcon /> },
-]
-const navLinksContext = createContext(navLinksArray)
 
 const App = () => {
-  
   return (
     <>
-      <Navbar />
+      <NavLinksProvider>
+        <Navbar />
+      </NavLinksProvider>
 
       <Routes>
         <Route

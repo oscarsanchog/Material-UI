@@ -5,10 +5,14 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@mui/material'
+import { NavLinks } from '../../contexts/navLinks'
 
 import { Box } from '@mui/system'
+import { useContext } from 'react'
 
-const NavListDrawer = ({ navLinks }) => {
+const NavListDrawer = () => {
+  const navLinksFromContext = useContext(NavLinks)
+  
   return (
     <Box sx={{ width: 250, bgcolor: 'white' }}>
       {/* <nav>
@@ -33,7 +37,7 @@ const NavListDrawer = ({ navLinks }) => {
 
       <nav>
         <List>
-          {navLinks.map(({ title, path, icon }) => (
+          {navLinksFromContext.map(({ title, path, icon }) => (
             <ListItem
               disablePadding
               key={title}>

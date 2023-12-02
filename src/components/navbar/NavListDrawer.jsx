@@ -6,46 +6,32 @@ import {
   ListItemText,
 } from '@mui/material'
 import { NavLinks } from '../../contexts/navLinks'
+import { NavLink } from 'react-router-dom'
 
 import { Box } from '@mui/system'
 import { useContext } from 'react'
 
-const NavListDrawer = () => {
+const NavListDrawer = ({ setOpen }) => {
   const navLinksFromContext = useContext(NavLinks)
   
   return (
     <Box sx={{ width: 250, bgcolor: 'white' }}>
-      {/* <nav>
-        <List>
-          <ListItem>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <ListItemText primary='Inbox' />
-          </ListItem>
-
-          <ListItem>
-            <ListItemIcon>
-              <DraftsIcon />
-            </ListItemIcon>
-            <ListItemText primary='Drafts' />
-          </ListItem>
-        </List>
-      </nav>
-
-      <Divider /> */}
-
       <nav>
         <List>
           {navLinksFromContext.map(({ title, path, icon }) => (
             <ListItem
               disablePadding
               key={title}>
+
               <ListItemButton
-                component='a'
-                href={path}>
+                component={NavLink}
+                to={path}
+                onClick={() => setOpen(false)}>
+
                 <ListItemIcon>{icon}</ListItemIcon>
+
                 <ListItemText primary={title} />
+
               </ListItemButton>
             </ListItem>
           ))}

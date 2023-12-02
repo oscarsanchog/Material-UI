@@ -10,7 +10,7 @@ import Login from './views/Login'
 import Register from './views/Register'
 
 import { NavLinksProvider } from './contexts/navLinks'
-
+import Alerts from './components/Alerts'
 
 const App = () => {
   return (
@@ -99,6 +99,7 @@ const App = () => {
         />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/alerts' element={<Alerts />} />
       </Routes>
     </>
   )

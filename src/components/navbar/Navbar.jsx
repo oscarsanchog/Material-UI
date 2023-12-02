@@ -55,7 +55,7 @@ const Navbar = () => {
         open={open}
         anchor='left'
         onClose={() => setOpen(false)}>
-        <NavListDrawer />
+        <NavListDrawer setOpen={setOpen} />
       </Drawer>
     </>
   )

@@ -13,6 +13,7 @@ export const NavLinksProvider = ({ children }) => {
     { title: `Home`, path: '/', icon: <InboxIcon /> },
     { title: `Login`, path: '/login', icon: <DraftsIcon /> },
     { title: `Register`, path: '/register', icon: <MenuIcon /> },
+    { title: 'Alerts', path: '/alerts', icon: <MenuIcon /> },
   ]
   
   return (

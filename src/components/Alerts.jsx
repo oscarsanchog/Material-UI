@@ -59,7 +59,13 @@ const Alerts = () => {
             Open
           </Button>
 
-          <Snackbar open={openSnackbar} /* message='Alerta Snackbar' */>
+          <Snackbar
+            open={openSnackbar}
+            autoHideDuration={2000}
+            onClose={() =>
+              setOpenSnackbar(false)
+            } /* message='Alerta Snackbar' */
+          >
             <Alert severity='error'>
               <AlertTitle>Error</AlertTitle>
               This is an error alert — check it out!

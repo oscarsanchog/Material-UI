@@ -14,6 +14,7 @@ export const NavLinksProvider = ({ children }) => {
     { title: `Login`, path: '/login', icon: <DraftsIcon /> },
     { title: `Register`, path: '/register', icon: <MenuIcon /> },
     { title: 'Alerts', path: '/alerts', icon: <MenuIcon /> },
+    { title: 'Skeleton', path: '/skeleton', icon: <MenuIcon /> },
   ]
   
   return (

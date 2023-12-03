@@ -11,13 +11,16 @@ import '@fontsource/roboto/700.css'
 import './styles/index.css'
 import { theme } from './styles/muiStyles.js'
 import { CssBaseline, ThemeProvider } from '@mui/material'
+import { SnackbarProvider } from 'notistack'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <CssBaseline />
-        <App />
+        <SnackbarProvider maxSnack={3} autoHideDuration={3000}>
+          <CssBaseline />
+          <App />
+        </SnackbarProvider>
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>

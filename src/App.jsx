@@ -11,6 +11,7 @@ import Register from './views/Register'
 
 import { NavLinksProvider } from './contexts/navLinks'
 import Alerts from './components/Alerts'
+import SkeletonComponent from './views/SkeletonComponent'
 
 const App = () => {
   return (
@@ -25,7 +26,8 @@ const App = () => {
           element={
             <Container
               maxWidth='md'
-              sx={{ border: 2, borderStyle: 'solid', boxShadow: 3, pb: 2 }}>
+              sx={{ border: 2, borderStyle: 'solid', boxShadow: 3, pb: 2 }}
+            >
               <h1>App</h1>
 
               <Button variant='contained'>Mi primer botón</Button>
@@ -35,27 +37,31 @@ const App = () => {
                 component='h2'
                 textAlign='center'
                 mt={1}
-                color='primary'>
+                color='primary'
+              >
                 h1 con Typography
               </Typography>
 
               <Box
                 sx={{ border: 1, p: 1, borderColor: 'red' }}
-                component='span'>
+                component='span'
+              >
                 Esto es un Box
               </Box>
 
               <Button
                 variant='outlined'
                 color='success'
-                startIcon={<AddAPhotoIcon />}>
+                startIcon={<AddAPhotoIcon />}
+              >
                 Success
               </Button>
 
               <Button
                 variant='outlined'
                 color='error'
-                endIcon={<ErrorOutlineIcon />}>
+                endIcon={<ErrorOutlineIcon />}
+              >
                 Success
               </Button>
 
@@ -100,6 +106,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/alerts' element={<Alerts />} />
+        <Route path='/skeleton' element={<SkeletonComponent />} />
       </Routes>
     </>
   )
